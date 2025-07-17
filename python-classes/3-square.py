@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""This module defines a Square class with a private size attribute and area method."""
+"""Defines a Square class with private size and area method."""
 
 
 class Square:
-    """This class defines a square with a private size attribute."""
+    """Square class with private size and method to calculate area."""
 
     def __init__(self, size=0):
         """Initialize a new Square instance.
@@ -22,9 +22,9 @@ class Square:
         self.__size = size
 
     def area(self):
-        """Calculate and return the area of the square.
+        """Calculate and return the current square area.
 
         Returns:
-            int: The current square area.
+            int: The area of the square.
         """
-        return self.__size * self.__size
+        return self.__size ** 2
