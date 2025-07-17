@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""Module that defines a Rectangle class.
-
-The Rectangle class has width, height, area, and perimeter functionality.
-"""
+"""Module that defines a Rectangle class with width, height, area and perimeter."""
 
 
 class Rectangle:
@@ -73,4 +70,4 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return 0
-        return 2 * (self.__width + self.__height)`
+        return 2 * (self.__width + self.__height)
