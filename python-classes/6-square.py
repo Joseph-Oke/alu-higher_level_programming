@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a Square class with size and position properties."""
 
+
 class Square:
     """Square class with size and position attributes."""
 
@@ -12,7 +13,8 @@ class Square:
             position (tuple): Position for printing (default (0, 0)).
 
         Raises:
-            TypeError: If size is not int or position is not a tuple of 2 positive integers.
+            TypeError: If size is not int or position is not a tuple of
+                2 positive integers.
             ValueError: If size < 0.
         """
         self.size = size
@@ -46,7 +48,9 @@ class Square:
             not all(isinstance(num, int) for num in value) or
             not all(num >= 0 for num in value)
         ):
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError(
+                "position must be a tuple of 2 positive integers"
+            )
         self.__position = value
 
     def area(self):
