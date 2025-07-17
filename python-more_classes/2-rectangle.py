@@ -1,22 +1,52 @@
 #!/usr/bin/python3
-Rectangle = __import__('2-rectangle').Rectangle
+"""Defines a class Rectangle with width, height, area, and perimeter."""
 
-# Case 1
-my_rectangle = Rectangle(2, 4)
-print("{} - {} => {}".format(my_rectangle.width, my_rectangle.height, my_rectangle.area()))
 
-# Case 2
-my_rectangle = Rectangle(2, 4)
-print("{} - {} => {}".format(my_rectangle.width, my_rectangle.height, my_rectangle.perimeter()))
+class Rectangle:
+    """Represents a rectangle with private width and height."""
 
-# Case 3
-my_rectangle = Rectangle(10, 10)
-print("{} - {} => {} / {}".format(my_rectangle.width, my_rectangle.height, my_rectangle.area(), my_rectangle.perimeter()))
+    def __init__(self, width=0, height=0):
+        """Initialize a new Rectangle instance.
 
-# Case 4
-my_rectangle = Rectangle(10)
-print("{} - {} => {} / {}".format(my_rectangle.width, my_rectangle.height, my_rectangle.area(), my_rectangle.perimeter()))
+        Args:
+            width (int): width of the rectangle (default 0)
+            height (int): height of the rectangle (default 0)
+        """
+        self.width = width
+        self.height = height
 
-# Case 5
-my_rectangle = Rectangle()
-print("{} - {} => {} / {}".format(my_rectangle.width, my_rectangle.height, my_rectangle.area(), my_rectangle.perimeter()))
+    @property
+    def width(self):
+        """Retrieve the width."""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """Set the width.
+
+        Args:
+            value (int): new width value
+
+        Raises:
+            TypeError: if value is not an integer
+            ValueError: if value is less than 0
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
+    @property
+    def height(self):
+        """Retrieve the height."""
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """Set the height.
+
+        Args:
+            value (int): new height value
+
+        Raises:
