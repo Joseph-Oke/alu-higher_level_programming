@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Defines a class Rectangle with string and repr representations."""
+"""Defines a class Rectangle with full behavior including deletion message."""
 
 
 class Rectangle:
-    """Rectangle class with width, height, area, perimeter, str and repr."""
+    """Rectangle class with width, height, area, perimeter, and more."""
 
     def __init__(self, width=0, height=0):
         """Initialize rectangle with optional width and height."""
@@ -57,3 +57,7 @@ class Rectangle:
     def __repr__(self):
         """Return a string that can recreate the rectangle using eval()."""
         return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """Print a message when the rectangle is deleted."""
+        print("Bye rectangle...")
