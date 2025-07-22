@@ -1,17 +1,22 @@
 #!/usr/bin/python3
 """
-This module sends a request to a URL
-and displays the X-Request-Id header value.
-It takes a URL as a command line argument
-and uses urllib to make the request.
+This module sends a POST request to a URL with an email parameter and displays
+the body of the response decoded in UTF-8 format.
 """
 
 import urllib.request
+import urllib.parse
 import sys
 
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    with urllib.request.urlopen(url) as response:
-        x_request_id = response.headers.get('X-Request-Id')
-        print(x_request_id)
+    email = sys.argv[2]
+
+    data = urllib.parse.urlencode({'email': email})
+    data = data.encode('ascii')
+
+    req = urllib.request.Request(url, data)
+    with urllib.request.urlopen(req) as response:
+        body = response.read()
+        print(body.decode('utf-8'))
