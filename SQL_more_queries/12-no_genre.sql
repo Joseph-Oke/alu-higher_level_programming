@@ -1,4 +1,4 @@
-i-- 12-no_genre.sql
+-- 12-no_genre.sql
 
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
